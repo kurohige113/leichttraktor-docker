@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  php:
+    build: ./php
+    container_name: web
+    volumes:
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - 80:80
