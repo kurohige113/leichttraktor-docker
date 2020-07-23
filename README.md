@@ -10,17 +10,38 @@ https://ja.wikipedia.org/wiki/ライヒトトラクトーア
 docker-compose up -d
 ```
 
-2. make html
+2. change root dir (apache2.conf)
 ```
 docker exec -it web bash
-touch index.html
+vim /etc/apache2/apache2.conf
+
+<Directory /var/www/leichttraktor>
+	Options Indexes FollowSymLinks
+	AllowOverride None
+	Require all granted
+</Directory>
 ```
 
-3. browse localhost
+3. change virtual host (000-default.conf)
+```
+vim /etc/apache2/sites-available/000-default.conf
+
+<VirtualHost *:80>
+    DocumentRoot /var/www/leichttraktor
+</VirtualHost>
+```
+
+4. make html
+```
+docker exec -it web bash
+touch /var/www/leichttraktor/index.html
+```
+
+5. browse localhost
 
 you can see the website.
 
-4. close container
+6. close container
 
 ```
 docker-compose down
