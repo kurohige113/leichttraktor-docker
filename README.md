@@ -17,3 +17,11 @@ touch index.html
 3. browse localhost
 
 you can see the website.
+
+4. close container
+
+```
+docker-compose down
+```
+
+# Overall view
