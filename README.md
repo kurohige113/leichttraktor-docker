@@ -24,10 +24,11 @@ vim /etc/apache2/apache2.conf
 
 3. change virtual host (000-default.conf)
 ```
+docker exec -it web bash
 vim /etc/apache2/sites-available/000-default.conf
 
 <VirtualHost *:80>
-    DocumentRoot /var/www/leichttraktor
+	DocumentRoot /var/www/leichttraktor
 </VirtualHost>
 ```
 
