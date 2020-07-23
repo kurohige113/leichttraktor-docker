@@ -25,3 +25,14 @@ docker-compose down
 ```
 
 # Overall view
+```
+.
+├── leichttraktor
+│   └── ...
+└── leichttraktor-docker   <- here
+    ├── README.md
+    ├── docker-compose.yml
+    └── php
+        ├── Dockerfile
+        └── php.ini
+```
